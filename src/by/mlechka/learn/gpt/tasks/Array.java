@@ -4,20 +4,14 @@ import java.util.Random;
 
 public class Array {
 
-    private static final int SIZE_OF_ARRAY = 10;
-
     private int[] numbers;
 
     public Array(int size) {
         Random random = new Random();
         numbers = new int[size];
         for (int i = 0; i < size; i++) {
-            numbers[i] = random.nextInt(10);
+            numbers[i] = random.nextInt(21)-10;
         }
-    }
-
-    int[] getArray() {
-        return numbers;
     }
 
     void printArray() {
