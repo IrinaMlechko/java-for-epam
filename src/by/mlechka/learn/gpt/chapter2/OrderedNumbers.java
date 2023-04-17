@@ -3,8 +3,8 @@ package by.mlechka.learn.gpt.chapter2;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
-
-public class Task2 {
+//Chapter 2, Task 2
+public class OrderedNumbers {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

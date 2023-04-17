@@ -1,8 +1,8 @@
 package by.mlechka.learn.gpt.chapter2;
 
 import java.util.Scanner;
-
-public class Task5 {
+//Chapter 2, Task 5
+public class CountEvenAndOddDigits {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

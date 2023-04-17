@@ -1,8 +1,8 @@
 package by.mlechka.learn.gpt.chapter2;
 
 import java.util.Scanner;
-
-public class Task4 {
+//Chapter 2, Task 4
+public class NumberWithMinAmountOfDifferentDigits {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

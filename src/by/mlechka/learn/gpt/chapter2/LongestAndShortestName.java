@@ -1,8 +1,8 @@
 package by.mlechka.learn.gpt.chapter2;
 
 import java.util.Scanner;
-
-public class Task1 {
+//Chapter 2, Task 1
+public class LongestAndShortestName {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
