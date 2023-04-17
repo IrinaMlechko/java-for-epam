@@ -1,9 +1,14 @@
 package by.mlechka.learn.gpt.chapter2;
 
 import java.util.Scanner;
-//Chapter 2, Task 5
+/**
+ * Chapter2, Task 5
+ */
 public class CountEvenAndOddDigits {
     public static void main(String[] args) {
+
+        PrintCredentials.printInformation();
+
         Scanner scanner = new Scanner(System.in);
 
         // Считываем количество чисел n

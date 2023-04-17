@@ -1,9 +1,14 @@
 package by.mlechka.learn.gpt.chapter2;
 
 import java.util.Scanner;
-//Chapter 2, Task 4
+/**
+ * Chapter2, Task 4
+ */
 public class NumberWithMinAmountOfDifferentDigits {
     public static void main(String[] args) {
+
+        PrintCredentials.printInformation();
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите количество чисел: ");

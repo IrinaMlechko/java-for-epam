@@ -1,9 +1,14 @@
 package by.mlechka.learn.gpt.chapter2;
 
 import java.util.Scanner;
-//Chapter 2, Task 3
+/**
+ * Chapter2, Task 3
+ */
 public class NumbersLongerAndShorterThanAverageLength {
     public static void main(String[] args) {
+
+        PrintCredentials.printInformation();
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите количество чисел: ");

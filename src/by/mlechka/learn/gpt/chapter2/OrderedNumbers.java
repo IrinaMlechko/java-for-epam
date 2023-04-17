@@ -3,9 +3,15 @@ package by.mlechka.learn.gpt.chapter2;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
-//Chapter 2, Task 2
+
+/**
+ * Chapter2, Task 2
+ */
 public class OrderedNumbers {
     public static void main(String[] args) {
+
+        PrintCredentials.printInformation();
+
         Scanner input = new Scanner(System.in);
 
         System.out.print("Введите количество элементов: ");
