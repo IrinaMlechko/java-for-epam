@@ -4,19 +4,19 @@ import java.util.Random;
 
 public class Array {
 
-    private int[] numbers;
+    private final int[] numbers;
 
     public Array(int size) {
         Random random = new Random();
         numbers = new int[size];
-        for (int i = 0; i < size; i++) {
-            numbers[i] = random.nextInt(21)-10;
+        for(int number : numbers) {
+            number = random.nextInt(21)-10;
         }
     }
 
     void printArray() {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+        for(int number : numbers) {
+            System.out.print(number + " ");
         }
         System.out.println();
     }
@@ -25,12 +25,12 @@ public class Array {
         int min = numbers[0];
         int max = numbers[0];
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < min) {
-                min = numbers[i];
+        for(int number : numbers) {
+            if (number < min) {
+                min = number;
             }
-            if (numbers[i] > max) {
-                max = numbers[i];
+            if (number > max) {
+                max = number;
             }
         }
         System.out.println("Min: " + min + " Max: " + max);
@@ -38,10 +38,7 @@ public class Array {
 
     double findAverage() {
         double sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
-        }
-
+        sum = findSum();
         double average = sum / numbers.length;
         System.out.println(average);
         return average;
@@ -49,8 +46,8 @@ public class Array {
 
     int findSum() {
         int sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
+        for(int number : numbers) {
+            sum += number;
         }
         System.out.println(sum);
         return sum;
@@ -62,10 +59,10 @@ public class Array {
         int negCount = 0;
         int zeroCount = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > 0) {
+        for(int number : numbers) {
+            if (number > 0) {
                 posCount++;
-            } else if (numbers[i] < 0) {
+            } else if (number < 0) {
                 negCount++;
             } else {
                 zeroCount++;
