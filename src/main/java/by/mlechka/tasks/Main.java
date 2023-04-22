@@ -1,4 +1,4 @@
-package by.mlechka.learn.gpt.tasks;
+package by.mlechka.tasks;
 
 import java.util.Random;
 public class Main {

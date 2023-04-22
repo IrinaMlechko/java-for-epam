@@ -1,10 +1,10 @@
-package by.mlechka.learn.gpt.tasks;
+package by.mlechka.tasks;
 
 import java.util.Random;
 
 public class Array {
 
-    private final int[] numbers;
+    private int[] numbers;
 
     public Array(int size) {
         Random random = new Random();
@@ -18,7 +18,6 @@ public class Array {
         for(int number : numbers) {
             System.out.print(number + " ");
         }
-        System.out.println();
     }
     void findMinMax() {
 
@@ -37,7 +36,7 @@ public class Array {
     }
 
     double findAverage() {
-        double sum = 0;
+        double sum;
         sum = findSum();
         double average = sum / numbers.length;
         System.out.println(average);

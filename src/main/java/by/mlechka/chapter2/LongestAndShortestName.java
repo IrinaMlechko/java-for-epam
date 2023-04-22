@@ -1,4 +1,4 @@
-package by.mlechka.learn.gpt.chapter2;
+package by.mlechka.chapter2;
 
 import java.util.Scanner;
 /**
