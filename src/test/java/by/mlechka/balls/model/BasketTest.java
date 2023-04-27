@@ -1,8 +1,6 @@
-package test.model;
+package by.mlechka.balls.model;
 
-import by.mlechka.balls.model.Ball;
-import by.mlechka.balls.model.Basket;
-import by.mlechka.common.BallColor;
+import by.mlechka.balls.common.BallColor;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

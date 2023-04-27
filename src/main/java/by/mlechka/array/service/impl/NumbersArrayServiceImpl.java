@@ -4,6 +4,7 @@ import by.mlechka.array.exception.InvalidDataException;
 import by.mlechka.array.service.NumbersArrayService;
 import by.mlechka.array.model.NumbersArray;
 
+import by.mlechka.array.validator.FileValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,7 +48,7 @@ public class NumbersArrayServiceImpl implements NumbersArrayService {
     }
 
     @Override
-    public void replaceValuesIf(NumbersArray numbersArray, int oldValue, int newValue) {
+    public void replaceValues(NumbersArray numbersArray, int oldValue, int newValue) {
         int[] numbers = numbersArray.getNumbers();
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == oldValue) {
@@ -155,14 +156,14 @@ public class NumbersArrayServiceImpl implements NumbersArrayService {
         }
         logger.info("Array after insertion sort: {}", numbersArray);
     }
-
+    @Override
     public NumbersArray createArrayFromFile(String fileName) throws InvalidDataException, FileNotFoundException {
+        FileValidator.validateFile(fileName);
         int[] numbers = readNumbersFromFile(fileName);
-        validateNumbers(numbers);
         return new NumbersArray(numbers);
     }
-
-    private int[] readNumbersFromFile(String fileName) throws FileNotFoundException, InvalidDataException {
+    @Override
+    public int[] readNumbersFromFile(String fileName) throws FileNotFoundException, InvalidDataException {
         Scanner scanner = new Scanner(new File(fileName));
         String line = scanner.nextLine();
         String[] numberStrings = line.split(" ");
@@ -178,14 +179,6 @@ public class NumbersArrayServiceImpl implements NumbersArrayService {
         return numbers;
     }
 
-    private void validateNumbers(int[] numbers) throws InvalidDataException {
-        for (int number : numbers) {
-            if (number < 1 || number > 10) {
-                throw new InvalidDataException("Number out of range: " + number);
-            }
-        }
-    }
-
     @Override
     public int findMinValueStreams(NumbersArray numbersArray) {
         return Arrays.stream(numbersArray.getNumbers()).min().orElseThrow();
@@ -197,7 +190,7 @@ public class NumbersArrayServiceImpl implements NumbersArrayService {
     }
 
     @Override
-    public void replaceValuesIfStreams(NumbersArray numbersArray, int oldValue, int newValue) {
+    public void replaceValuesStreams(NumbersArray numbersArray, int oldValue, int newValue) {
         int[] numbers = numbersArray.getNumbers();
         int[] newNumbers = Arrays.stream(numbers)
                 .map(num -> num == oldValue ? newValue : num)
@@ -224,22 +217,23 @@ public class NumbersArrayServiceImpl implements NumbersArrayService {
     public int countNegativeValuesStreams(NumbersArray numbersArray) {
         return (int) Arrays.stream(numbersArray.getNumbers()).filter(num -> num < 0).count();
     }
-
-    public static void sortArrayStreams(NumbersArray numbersArray) {
+    @Override
+    public void sortArrayStreams(NumbersArray numbersArray) {
         int[] numbers = numbersArray.getNumbers();
         Arrays.stream(numbers)
                 .sorted();
     }
-
+    @Override
     public NumbersArray createArrayFromFileStreams(String fileName) throws InvalidDataException, FileNotFoundException {
+        FileValidator fileValidator = new FileValidator();
+        fileValidator.validateFileStreams(fileName);
         int[] numbers = Arrays.stream(readLineFromFileStreams(fileName).split("\\s"))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-        validateNumbers(numbers);
         return new NumbersArray(numbers);
     }
-
-    private String readLineFromFileStreams(String fileName) throws FileNotFoundException {
+    @Override
+    public String readLineFromFileStreams(String fileName) throws FileNotFoundException {
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             return stream.findFirst().orElseThrow(FileNotFoundException::new);
         } catch (IOException e) {

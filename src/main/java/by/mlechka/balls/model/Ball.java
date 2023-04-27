@@ -1,8 +1,7 @@
 package by.mlechka.balls.model;
 
-import by.mlechka.common.BallColor;
+import by.mlechka.balls.common.BallColor;
 
-import java.awt.*;
 import java.util.StringJoiner;
 
 public class Ball {

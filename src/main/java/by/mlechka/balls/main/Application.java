@@ -4,7 +4,7 @@ import by.mlechka.balls.model.Ball;
 import by.mlechka.balls.model.Basket;
 import by.mlechka.balls.service.BallService;
 import by.mlechka.balls.service.impl.BallServiceImpl;
-import by.mlechka.common.BallColor;
+import by.mlechka.balls.common.BallColor;
 
 public class Application {
     public static void main(String[] args) {

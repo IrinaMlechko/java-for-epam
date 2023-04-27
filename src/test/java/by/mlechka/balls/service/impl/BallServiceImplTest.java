@@ -1,11 +1,9 @@
-package test.service.impl;
+package by.mlechka.balls.service.impl;
 
-import by.mlechka.array.model.NumbersArray;
 import by.mlechka.balls.model.Ball;
 import by.mlechka.balls.model.Basket;
 import by.mlechka.balls.service.BallService;
-import by.mlechka.balls.service.impl.BallServiceImpl;
-import by.mlechka.common.BallColor;
+import by.mlechka.balls.common.BallColor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

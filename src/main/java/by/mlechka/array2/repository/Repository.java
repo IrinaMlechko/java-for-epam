@@ -1,0 +1,68 @@
+package by.mlechka.array2.repository;
+
+import by.mlechka.array2.model.DataArray;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.StringJoiner;
+
+public class Repository {
+
+    private static Repository instance;
+
+    private List<DataArray> dataArrays;
+
+    public Repository(){}
+
+    public static Repository getInstance(){
+
+        if (instance == null){
+            instance = new Repository();
+        }
+        return instance;
+    }
+
+    @Override
+    public String toString() {
+
+        return new StringJoiner(", ", DataArray.class.getSimpleName() + "[", "]")
+                .add("dataArrays=" + dataArrays)
+                .toString();
+    }
+
+    public boolean add(DataArray dataArray) {
+        return dataArrays.add(dataArray);
+    }
+
+    public boolean addAll(List<DataArray> dataArrays) {
+        return this.dataArrays.addAll(dataArrays);
+    }
+
+    public boolean delete(DataArray dataArray) {
+        return dataArrays.remove(dataArray);
+    }
+
+    public boolean deleteAll(List<DataArray> dataArrays) {
+        return this.dataArrays.removeAll(dataArrays);
+    }
+
+    public DataArray queryFindFirstById (Specification specification) {
+        return dataArrays.stream().filter(specification::specify).findFirst().orElse(null);
+    }
+
+    public DataArray queryFindAllBySum (Specification specification) {
+        return dataArrays.stream().filter(specification::specify).findFirst().orElse(null);
+    }
+
+    public DataArray queryFindAllWithMinGreaterThan (Specification specification) {
+        return dataArrays.stream().filter(specification::specify).findFirst().orElse(null);
+    }
+
+    public void sortArrayByFirstElement() {
+        dataArrays.sort(Comparator.comparingInt(o -> o.getNumbers()[0]));
+    }
+
+    public void sortArrayByLength() {
+        dataArrays.sort(Comparator.comparingInt(o -> o.getNumbers().length));
+    }
+}

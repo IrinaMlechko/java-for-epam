@@ -1,7 +1,9 @@
 package by.mlechka.array.service;
 
+import by.mlechka.array.exception.InvalidDataException;
 import by.mlechka.array.model.NumbersArray;
 
+import java.io.FileNotFoundException;
 import java.util.function.IntPredicate;
 
 /**
@@ -26,13 +28,13 @@ public interface NumbersArrayService {
     int findMaxValue(NumbersArray numbers);
 
     /**
-     * Replaces all elements in the given array that satisfy the given condition with the specified value.
+     * Replaces some elements in the given array with the specified value.
      *
      * @param numbers    the array of numbers to update
      * @param oldValue  the value to be replaced
      * @param newValue the value with which to replace the matching elements
      */
-    void replaceValuesIf(NumbersArray numbers, int oldValue, int newValue);
+    void replaceValues(NumbersArray numbers, int oldValue, int newValue);
 
     /**
      * Calculates the average value of the elements in the given array.
@@ -86,17 +88,64 @@ public interface NumbersArrayService {
 
     void insertionSort(NumbersArray numbersArray);
 
+    NumbersArray createArrayFromFile(String fileName) throws InvalidDataException, FileNotFoundException;
+
+    int[] readNumbersFromFile(String fileName) throws FileNotFoundException, InvalidDataException;
+
+    /**
+     * Finds the minimum value in the given array using streams.
+     *
+     * @param numbersArray the array of numbers to search
+     * @return the minimum value in the array
+     */
     int findMinValueStreams(NumbersArray numbersArray);
-
+    /**
+     * Finds the maximum value in the given array using streams.
+     *
+     * @param numbersArray the array of numbers to search
+     * @return the maximum value in the array
+     */
     int findMaxValueStreams(NumbersArray numbersArray);
-
-    void replaceValuesIfStreams(NumbersArray numbersArray, int oldValue, int newValue);
-
+    /**
+     * Replaces all elements with old value in the given array  with the specified value using streams.
+     *
+     * @param numbersArray    the array of numbers to update
+     * @param oldValue  the value to be replaced
+     * @param newValue the value with which to replace the matching elements
+     */
+    void replaceValuesStreams(NumbersArray numbersArray, int oldValue, int newValue);
+    /**
+     * Calculates the average value of the elements in the given array using streams.
+     *
+     * @param numbersArray the array of numbers to calculate the average of
+     * @return the average value of the elements in the array
+     */
     double findAverageValueStreams(NumbersArray numbersArray);
-
+    /**
+     * Calculates the sum of the elements in the given array.
+     *
+     * @param numbersArray the array of numbers to sum
+     * @return the sum of the elements in the array
+     */
     int calculateSumStreams(NumbersArray numbersArray);
-
+    /**
+     * Calculates the number of positive elements in the given array using streams.
+     *
+     * @param numbersArray the array of numbers to search
+     * @return the number of positive elements in the array
+     */
     int countPositiveValuesStreams(NumbersArray numbersArray);
-
+    /**
+     * Calculates the number of negative elements in the given array using streams.
+     *
+     * @param numbersArray the array of numbers to search
+     * @return the number of negative elements in the array
+     */
     int countNegativeValuesStreams(NumbersArray numbersArray);
+
+    void sortArrayStreams(NumbersArray numbersArray);
+
+    NumbersArray createArrayFromFileStreams(String fileName) throws InvalidDataException, FileNotFoundException;
+
+    String readLineFromFileStreams(String fileName) throws FileNotFoundException;
 }

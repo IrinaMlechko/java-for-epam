@@ -1,15 +1,14 @@
-package test.array.service.impl;
+package by.mlechka.array.service.impl;
 
 import by.mlechka.array.exception.InvalidDataException;
 import by.mlechka.array.model.NumbersArray;
-import by.mlechka.array.service.impl.NumbersArrayServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 
-class NumbersArrayServiceImplTest {
+class DataArrayServiceImplTest {
 
     private NumbersArrayServiceImpl numbersArrayService;
 
@@ -37,7 +36,7 @@ class NumbersArrayServiceImplTest {
         NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, 4, 5, 6});
         int oldValue = 4;
         int newValue = 0;
-        numbersArrayService.replaceValuesIf(numbersArray, oldValue, newValue);
+        numbersArrayService.replaceValues(numbersArray, oldValue, newValue);
         int[] expectedArray = new int[]{1, 2, 3, 0, 5, 6};
         Assertions.assertArrayEquals(expectedArray, numbersArray.getNumbers());
     }
@@ -86,8 +85,6 @@ class NumbersArrayServiceImplTest {
         Assertions.assertArrayEquals(expectedArray, numbersArray.getNumbers());
     }
 
-
-
     @Test
     void testSelectionSort() {
         NumbersArray numbersArray = new NumbersArray(new int[]{5, 2, 8, 1, 4});
@@ -115,5 +112,56 @@ class NumbersArrayServiceImplTest {
             Assertions.assertThrows(InvalidDataException.class, () -> service.createArrayFromFile("src/main/resources/out_of_range_data.txt"));
         }
 
+    @Test
+    void testFindMinValueStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, -4, 5, 6});
+        int actualResult = numbersArrayService.findMinValueStreams(numbersArray);
+        Assertions.assertEquals(-4, actualResult);
+    }
+
+    @Test
+    void testFindMaxValueStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, -4, 5, 6});
+        int actualResult = numbersArrayService.findMaxValueStreams(numbersArray);
+        Assertions.assertEquals(6, actualResult);
+    }
+
+    @Test
+    void testReplaceValuesStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, 4, 5, 6});
+        int oldValue = 4;
+        int newValue = 0;
+        numbersArrayService.replaceValuesStreams(numbersArray, oldValue, newValue);
+        int[] expectedArray = new int[]{1, 2, 3, 0, 5, 6};
+        Assertions.assertArrayEquals(expectedArray, numbersArray.getNumbers());
+    }
+
+    @Test
+    void testFindAverageValueStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, 4, 5, 6});
+        double actualResult = numbersArrayService.findAverageValueStreams(numbersArray);
+        Assertions.assertEquals(3.5, actualResult);
+    }
+
+    @Test
+    void testCalculateSumStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, 4, 5, 6});
+        int actualResult = numbersArrayService.calculateSumStreams(numbersArray);
+        Assertions.assertEquals(21, actualResult);
+    }
+
+    @Test
+    void testCountPositiveValuesStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{-1, 2, -3, 4, -5, 6});
+        int actualResult = numbersArrayService.countPositiveValuesStreams(numbersArray);
+        Assertions.assertEquals(3, actualResult);
+    }
+
+    @Test
+    void testCountNegativeValuesStreams() {
+        NumbersArray numbersArray = new NumbersArray(new int[]{-1, 2, -3, 4, -5, 6});
+        int actualResult = numbersArrayService.countNegativeValuesStreams(numbersArray);
+        Assertions.assertEquals(3, actualResult);
+    }
 }
 

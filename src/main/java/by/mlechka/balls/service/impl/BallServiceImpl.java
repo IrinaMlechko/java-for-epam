@@ -3,7 +3,7 @@ package by.mlechka.balls.service.impl;
 import by.mlechka.balls.service.BallService;
 import by.mlechka.balls.model.Ball;
 import by.mlechka.balls.model.Basket;
-import by.mlechka.common.BallColor;
+import by.mlechka.balls.common.BallColor;
 
 public class BallServiceImpl implements BallService {
 
