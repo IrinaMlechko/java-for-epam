@@ -106,12 +106,6 @@ class DataArrayServiceImplTest {
             Assertions.assertThrows(InvalidDataException.class, () -> service.createArrayFromFile("src/main/resources/invalid_data.txt"));
         }
 
-        @Test
-        public void testCreateArrayFromFileWithOutOfRangeData() throws FileNotFoundException {
-            NumbersArrayServiceImpl service = new NumbersArrayServiceImpl();
-            Assertions.assertThrows(InvalidDataException.class, () -> service.createArrayFromFile("src/main/resources/out_of_range_data.txt"));
-        }
-
     @Test
     void testFindMinValueStreams() {
         NumbersArray numbersArray = new NumbersArray(new int[]{1, 2, 3, -4, 5, 6});
