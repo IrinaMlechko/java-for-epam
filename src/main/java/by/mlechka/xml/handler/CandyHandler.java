@@ -46,12 +46,11 @@ public class CandyHandler extends DefaultHandler {
         if (currentXmlTag!= null) {
             switch (currentXmlTag) {
                 case NAME -> current.setName(data);
-                case ENERGY -> current.setEnergy(Integer.parseInt(data));
-//                case WATER -> current.getIngredients().setWater(Integer.parseInt(data));
-//                case SUGAR -> current.getIngredients().setSugar(Integer.parseInt(data));
-//                case FRUCTOSE -> current.getIngredients().setFructose(Integer.parseInt(data));
-//                case CHOCOLATE -> current.getIngredients().setChocolateType(ChocolateTypeEnum.valueOf(data));
-//                case VANILLA -> current.getIngredients().setVanilla(Integer.parseInt(data));
+                //TODO: why does it not work like Value?
+                case ENERGY -> current.setEnergy(new Candy.Energy());
+                case ENERGYAMOUNT -> current.getEnergy().setAmount(Integer.parseInt(data));
+                //TODO: how to work with default value if tag present in xml?
+                case ENERGYUNIT -> current.getEnergy().setUnit(data != "" ? data : "kcal");
                 case INGREDIENTS -> current.setIngredients(new ArrayList<>());
                 case INGREDIENT -> current.getIngredients().add(new Candy.IngredientType());
                 case INGREDIENTNAME -> current.getIngredients().get(current.getIngredients().size()-1).setName(data);

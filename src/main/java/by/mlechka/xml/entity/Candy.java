@@ -9,7 +9,7 @@ public class Candy {
 
     private String id;
     private String name;
-    private int energy;
+    private Energy energy;
 //    private IngredientType ingredientType = new IngredientType();
     private List<IngredientType> ingredients = new ArrayList<>();
     private Value value = new Value();
@@ -30,7 +30,7 @@ public class Candy {
     public Candy() {
     }
 
-    public Candy(String id, String name, int energy, List<IngredientType> ingredients, Value value, String manufacturer, String variety) {
+    public Candy(String id, String name, Energy energy, List<IngredientType> ingredients, Value value, String manufacturer, String variety) {
         this.id = id;
         this.name = name;
         this.energy = energy;
@@ -56,11 +56,11 @@ public class Candy {
         this.name = name;
     }
 
-    public int getEnergy() {
+    public Energy getEnergy() {
         return energy;
     }
 
-    public void setEnergy(int energy) {
+    public void setEnergy(Energy energy) {
         this.energy = energy;
     }
 
@@ -96,75 +96,6 @@ public class Candy {
         this.variety = variety;
     }
 
-//    public static class IngredientType {
-//
-//    private Integer water;
-//    private Integer sugar;
-//    private Integer fructose;
-//    private ChocolateTypeEnum chocolateType;
-//    private Integer vanilla;
-//
-//        @Override
-//        public String toString() {
-//            final StringBuilder sb = new StringBuilder("\nIngredientType:\n\tWater:");
-//            sb.append(water).append("\n\tSugar: ").append(sugar);
-//            sb.append("\n\tFructose: ").append(fructose);
-//            sb.append("\n\tChocolateType: ").append(chocolateType);
-//            sb.append("\n\tVanilla: ").append(vanilla).append('\n');
-//            return sb.toString();
-//        }
-//
-//        public IngredientType() {
-//        }
-//
-//        public IngredientType(Integer water, Integer sugar, Integer fructose, ChocolateTypeEnum chocolateType, Integer vanilla) {
-//            this.water = water;
-//            this.sugar = sugar;
-//            this.fructose = fructose;
-//            this.chocolateType = chocolateType;
-//            this.vanilla = vanilla;
-//        }
-//
-//        public Integer getWater() {
-//        return water;
-//    }
-//
-//    public void setWater(int water) {
-//        this.water = water;
-//    }
-//
-//    public Integer getSugar() {
-//        return sugar;
-//    }
-//
-//    public void setSugar(Integer sugar) {
-//        this.sugar = sugar;
-//    }
-//
-//    public Integer getFructose() {
-//        return fructose;
-//    }
-//
-//    public void setFructose(Integer fructose) {
-//        this.fructose = fructose;
-//    }
-//
-//    public ChocolateTypeEnum getChocolateType() {
-//        return chocolateType;
-//    }
-//
-//    public void setChocolateType(ChocolateTypeEnum chocolateType) {
-//        this.chocolateType = chocolateType;
-//    }
-//
-//    public Integer getVanilla() {
-//        return vanilla;
-//    }
-//
-//    public void setVanilla(Integer vanilla) {
-//        this.vanilla = vanilla;
-//    }
-//    }
 
     public static class Ingredients {
 
@@ -272,6 +203,42 @@ public class Candy {
 
         public void setCarbohydrates(int carbohydrates) {
             this.carbohydrates = carbohydrates;
+        }
+    }
+    public static class Energy {
+
+        private int amount;
+        private String unit;
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("\n\t");
+            sb.append(amount).append(" ").append(unit);
+            return sb.toString();
+        }
+
+        public Energy(int amount, String unit) {
+            this.amount = amount;
+            this.unit = unit;
+        }
+
+        public Energy() {
+        }
+
+        public int getAmount() {
+            return amount;
+        }
+
+        public void setAmount(int amount) {
+            this.amount = amount;
+        }
+
+        public String getUnit() {
+            return unit;
+        }
+
+        public void setUnit(String unit) {
+            this.unit = unit;
         }
     }
 }

@@ -14,11 +14,7 @@
     <xsd:complexType name="candyType">
         <xsd:sequence>
             <xsd:element name="name" type="xsd:string" minOccurs="1"/>
-            <xsd:element name="energy" type="xsd:nonNegativeInteger" maxOccurs="1">
-                <xsd:annotation>
-                    <xsd:documentation>The energy value in kilocalories.</xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
+            <xsd:element name="energy" type="energyType" minOccurs="1"/>
             <xsd:element name="ingredients" type="ingredientsType"/>
             <xsd:element name="value" type="valueType"/>
             <xsd:element name="manufacturer" type="xsd:string" minOccurs="1"/>
@@ -66,5 +62,12 @@
             <xsd:enumeration value="milk"/>
         </xsd:restriction>
     </xsd:simpleType>
+
+    <xsd:complexType name="energyType">
+            <xsd:sequence>
+                <xsd:element name="energyAmount" type="xsd:nonNegativeInteger"/>
+                <xsd:element name="energyUnit" type="xsd:string" default="kcal"/>
+            </xsd:sequence>
+    </xsd:complexType>
 
 </xsd:schema>

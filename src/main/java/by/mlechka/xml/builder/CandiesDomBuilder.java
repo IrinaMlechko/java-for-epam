@@ -52,8 +52,8 @@ public class CandiesDomBuilder {
 
         candy.setId(candyElement.getAttribute("id"));
         candy.setName(getElementTextContent(candyElement, "name"));
-        Integer energy = Integer.parseInt(getElementTextContent(candyElement, "energy"));
-        candy.setEnergy(energy);
+//        Candy.Energy energy = getElementTextContent(candyElement, "energy");
+//        candy.setEnergy(energy);
         Candy.Ingredients ingredients = new Candy.Ingredients();
 // init an address object
         Element ingredientsElement =

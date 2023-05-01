@@ -7,6 +7,8 @@ public enum CandyXmlTag {
     VALUE("value"),
     NAME("name"),
     ENERGY("energy"),
+    ENERGYAMOUNT("energyAmount"),
+    ENERGYUNIT("energyUnit"),
     WATER("water"),
     SUGAR("sugar"),
     FRUCTOSE("fructose"),

@@ -3,7 +3,10 @@
 <candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <candy id="AAAAA">
         <name>Toffee</name>
-        <energy>620</energy>
+        <energy>
+            <energyAmount>620</energyAmount>
+            <energyUnit>kJ</energyUnit>
+        </energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
@@ -31,7 +34,10 @@
     </candy>
     <candy id="AAAAB">
         <name>string</name>
-        <energy>384</energy>
+        <energy>
+            <energyAmount>328</energyAmount>
+            <energyUnit></energyUnit>
+        </energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
@@ -59,7 +65,10 @@
     </candy>
     <candy id="AAAAC">
         <name>string</name>
-        <energy>3837</energy>
+        <energy>
+            <energyAmount>400</energyAmount>
+            <energyUnit></energyUnit>
+        </energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
@@ -87,7 +96,10 @@
     </candy>
     <candy id="AAAAD">
         <name>string</name>
-        <energy>3655</energy>
+        <energy>
+            <energyAmount>500</energyAmount>
+            <energyUnit></energyUnit>
+        </energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
@@ -115,7 +127,10 @@
     </candy>
     <candy id="AAAAE">
         <name>string</name>
-        <energy>2366</energy>
+        <energy>
+            <energyAmount>300</energyAmount>
+            <energyUnit></energyUnit>
+        </energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
