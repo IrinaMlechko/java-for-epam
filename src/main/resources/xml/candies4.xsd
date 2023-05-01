@@ -45,7 +45,7 @@
 
     <xsd:complexType name="ingredientType">
         <xsd:sequence>
-            <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="ingredientName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
             <xsd:element name="amount" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
     </xsd:complexType>

@@ -4,7 +4,6 @@ public enum CandyXmlTag {
 
     CANDIES("candies"),
     CANDY("candy"),
-    INGREDIENTS("ingredients"),
     VALUE("value"),
     NAME("name"),
     ENERGY("energy"),
@@ -13,6 +12,10 @@ public enum CandyXmlTag {
     FRUCTOSE("fructose"),
     CHOCOLATE("chocolateType"),
     VANILLA("vanilla"),
+    INGREDIENTS("ingredients"),
+    INGREDIENT ("ingredient"),
+    INGREDIENTNAME ("ingredientName"),
+    AMOUNT ("amount"),
     PROTEIN("protein"),
     FAT("fat"),
     CARBOHYDRATES("carbohydrates"),

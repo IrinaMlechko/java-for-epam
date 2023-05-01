@@ -2,12 +2,16 @@ package by.mlechka.xml.entity;
 
 import by.mlechka.xml.common.ChocolateTypeEnum;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Candy {
 
     private String id;
     private String name;
     private int energy;
-    private IngredientType ingredientType = new IngredientType();
+//    private IngredientType ingredientType = new IngredientType();
+    private List<IngredientType> ingredients = new ArrayList<>();
     private Value value = new Value();
     private String manufacturer;
     private String variety;
@@ -16,7 +20,8 @@ public class Candy {
     public String toString() {
         final StringBuilder sb = new StringBuilder("\nId:");
         sb.append(id).append("\nName: ").append(name);
-        sb.append("\nEnergy: ").append(energy).append(ingredientType).append(value);
+        sb.append("\nEnergy: ").append(energy);
+        sb.append("\nIngredients: ").append(ingredients);
         sb.append("\nManufacturer: ").append(manufacturer);
         sb.append("\nVariety: ").append(variety).append('\n');
         return sb.toString();
@@ -25,11 +30,11 @@ public class Candy {
     public Candy() {
     }
 
-    public Candy(String id, String name, int energy, IngredientType ingredientType, Value value, String manufacturer, String variety) {
+    public Candy(String id, String name, int energy, List<IngredientType> ingredients, Value value, String manufacturer, String variety) {
         this.id = id;
         this.name = name;
         this.energy = energy;
-        this.ingredientType = ingredientType;
+        this.ingredients = ingredients;
         this.value = value;
         this.manufacturer = manufacturer;
         this.variety = variety;
@@ -59,12 +64,12 @@ public class Candy {
         this.energy = energy;
     }
 
-    public IngredientType getIngredientType() {
-        return ingredientType;
+    public List<IngredientType> getIngredients() {
+        return ingredients;
     }
 
-    public void setIngredientType(IngredientType ingredientType) {
-        this.ingredientType = ingredientType;
+    public void setIngredients(List<IngredientType> ingredients) {
+        this.ingredients = ingredients;
     }
 
     public Value getValue() {
@@ -161,6 +166,19 @@ public class Candy {
 //    }
 //    }
 
+    public static class Ingredients {
+
+        private List<IngredientType> ingredients = new ArrayList<>();
+
+        public List<IngredientType> getIngredients() {
+            return ingredients;
+        }
+
+        public void setIngredients(List<IngredientType> ingredients) {
+            this.ingredients = ingredients;
+        }
+    }
+
     public static class IngredientType {
         private String name;
         private int amount;
@@ -175,8 +193,8 @@ public class Candy {
 
         @Override
         public String toString() {
-            final StringBuilder sb = new StringBuilder("\nIngredientType:\n\t:");
-            sb.append(name).append("\n\tAmount: ").append(amount).append('\n');
+            final StringBuilder sb = new StringBuilder("\n\t");
+            sb.append(name).append(" - ").append(amount).append('\n');
             return sb.toString();
         }
 

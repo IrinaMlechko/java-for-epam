@@ -6,16 +6,16 @@
         <energy>620</energy>
         <ingredients>
             <ingredient>
-                <name>water</name>
-                <amout>10</amout>
+                <ingredientName>water</ingredientName>
+                <amount>10</amount>
             </ingredient>
             <ingredient>
-                <name>sugar</name>
-                <amout>1</amout>
+                <ingredientName>sugar</ingredientName>
+                <amount>1</amount>
             </ingredient>
             <ingredient>
-                <name>flour</name>
-                <amout>5</amout>
+                <ingredientName>flour</ingredientName>
+                <amount>5</amount>
             </ingredient>
         </ingredients>
         <value>
@@ -31,16 +31,16 @@
         <energy>-384</energy>
         <ingredients>
             <ingredient>
-                <name>water</name>
-                <amout>10</amout>
+                <ingredientName>water</ingredientName>
+                <amount>10</amount>
             </ingredient>
             <ingredient>
-                <name>sugar</name>
-                <amout>1</amout>
+                <ingredientName>sugar</ingredientName>
+                <amount>1</amount>
             </ingredient>
             <ingredient>
-                <name>flour</name>
-                <amout>5</amout>
+                <ingredientName>flour</ingredientName>
+                <amount>5</amount>
             </ingredient>
         </ingredients>
         <value>
@@ -56,16 +56,16 @@
         <energy>-3837</energy>
         <ingredients>
             <ingredient>
-                <name>water</name>
-                <amout>10</amout>
+                <ingredientName>water</ingredientName>
+                <amount>10</amount>
             </ingredient>
             <ingredient>
-                <name>sugar</name>
-                <amout>1</amout>
+                <ingredientName>sugar</ingredientName>
+                <amount>1</amount>
             </ingredient>
             <ingredient>
-                <name>flour</name>
-                <amout>5</amout>
+                <ingredientName>flour</ingredientName>
+                <amount>5</amount>
             </ingredient>
         </ingredients>
         <value>
@@ -81,16 +81,16 @@
         <energy>-3655</energy>
         <ingredients>
             <ingredient>
-                <name>water</name>
-                <amout>10</amout>
+                <ingredientName>water</ingredientName>
+                <amount>10</amount>
             </ingredient>
             <ingredient>
-                <name>sugar</name>
-                <amout>1</amout>
+                <ingredientName>sugar</ingredientName>
+                <amount>1</amount>
             </ingredient>
             <ingredient>
-                <name>flour</name>
-                <amout>5</amout>
+                <ingredientName>flour</ingredientName>
+                <amount>5</amount>
             </ingredient>
         </ingredients>
         <value>
@@ -106,16 +106,16 @@
         <energy>2366</energy>
         <ingredients>
             <ingredient>
-                <name>water</name>
-                <amout>10</amout>
+                <ingredientName>water</ingredientName>
+                <amount>10</amount>
             </ingredient>
             <ingredient>
-                <name>sugar</name>
-                <amout>1</amout>
+                <ingredientName>sugar</ingredientName>
+                <amount>1</amount>
             </ingredient>
             <ingredient>
-                <name>flour</name>
-                <amout>5</amout>
+                <ingredientName>flour</ingredientName>
+                <amount>5</amount>
             </ingredient>
         </ingredients>
         <value>
