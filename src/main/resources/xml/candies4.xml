@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
-<candies xsi:nonamespaceSchemaLocation="candies3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <candy id="AAAAA">
         <name>Toffee</name>
         <energy>620</energy>
@@ -8,14 +8,17 @@
             <ingredient>
                 <ingredientName>water</ingredientName>
                 <amount>10</amount>
+                <unit>ml</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>sugar</ingredientName>
                 <amount>1</amount>
+                <unit>mg</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>flour</ingredientName>
                 <amount>5</amount>
+                <unit>mg</unit>
             </ingredient>
         </ingredients>
         <value>
@@ -28,49 +31,55 @@
     </candy>
     <candy id="AAAAB">
         <name>string</name>
-        <energy>-384</energy>
+        <energy>384</energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
                 <amount>10</amount>
+                <unit>ml</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>sugar</ingredientName>
                 <amount>1</amount>
+                <unit>mg</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>flour</ingredientName>
                 <amount>5</amount>
+                <unit>mg</unit>
             </ingredient>
         </ingredients>
         <value>
             <protein>4372</protein>
-            <fat>-272</fat>
-            <carbohydrates>-4094</carbohydrates>
+            <fat>272</fat>
+            <carbohydrates>4094</carbohydrates>
         </value>
         <manufacturer>string</manufacturer>
         <variety>toffee</variety>
     </candy>
     <candy id="AAAAC">
         <name>string</name>
-        <energy>-3837</energy>
+        <energy>3837</energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
                 <amount>10</amount>
+                <unit>ml</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>sugar</ingredientName>
                 <amount>1</amount>
+                <unit>mg</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>flour</ingredientName>
                 <amount>5</amount>
+                <unit>mg</unit>
             </ingredient>
         </ingredients>
         <value>
-            <protein>-1747</protein>
-            <fat>-2080</fat>
+            <protein>1747</protein>
+            <fat>2080</fat>
             <carbohydrates>1852</carbohydrates>
         </value>
         <manufacturer>string</manufacturer>
@@ -78,25 +87,28 @@
     </candy>
     <candy id="AAAAD">
         <name>string</name>
-        <energy>-3655</energy>
+        <energy>3655</energy>
         <ingredients>
             <ingredient>
                 <ingredientName>water</ingredientName>
                 <amount>10</amount>
+                <unit>ml</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>sugar</ingredientName>
                 <amount>1</amount>
+                <unit>mg</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>flour</ingredientName>
                 <amount>5</amount>
+                <unit>mg</unit>
             </ingredient>
         </ingredients>
         <value>
-            <protein>-3301</protein>
-            <fat>-1740</fat>
-            <carbohydrates>-2068</carbohydrates>
+            <protein>3301</protein>
+            <fat>1740</fat>
+            <carbohydrates>2068</carbohydrates>
         </value>
         <manufacturer>string</manufacturer>
         <variety>chocolate</variety>
@@ -108,14 +120,17 @@
             <ingredient>
                 <ingredientName>water</ingredientName>
                 <amount>10</amount>
+                <unit>ml</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>sugar</ingredientName>
                 <amount>1</amount>
+                <unit>mg</unit>
             </ingredient>
             <ingredient>
                 <ingredientName>flour</ingredientName>
                 <amount>5</amount>
+                <unit>mg</unit>
             </ingredient>
         </ingredients>
         <value>

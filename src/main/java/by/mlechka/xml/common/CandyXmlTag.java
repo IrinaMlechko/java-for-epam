@@ -16,6 +16,7 @@ public enum CandyXmlTag {
     INGREDIENT ("ingredient"),
     INGREDIENTNAME ("ingredientName"),
     AMOUNT ("amount"),
+    UNIT ("unit"),
     PROTEIN("protein"),
     FAT("fat"),
     CARBOHYDRATES("carbohydrates"),

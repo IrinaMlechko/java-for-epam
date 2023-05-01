@@ -182,10 +182,12 @@ public class Candy {
     public static class IngredientType {
         private String name;
         private int amount;
+        private String unit;
 
-        public IngredientType(String name, int amount) {
+        public IngredientType(String name, int amount, String unit) {
             this.name = name;
             this.amount = amount;
+            this.unit = unit;
         }
 
         public IngredientType() {
@@ -194,7 +196,7 @@ public class Candy {
         @Override
         public String toString() {
             final StringBuilder sb = new StringBuilder("\n\t");
-            sb.append(name).append(" - ").append(amount).append('\n');
+            sb.append(name).append(" - ").append(amount).append(" ").append(unit);
             return sb.toString();
         }
 
@@ -208,6 +210,14 @@ public class Candy {
 
         public int getAmount() {
             return amount;
+        }
+
+        public String getUnit() {
+            return unit;
+        }
+
+        public void setUnit(String unit) {
+            this.unit = unit;
         }
 
         public void setAmount(int amount) {

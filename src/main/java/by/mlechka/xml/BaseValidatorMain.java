@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 public class BaseValidatorMain {
     public static void main(String[] args) {
         String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
-        String fileName = "src/main/resources/xml/candies3.xml";
+        String fileName = "src/main/resources/xml/candies4.xml";
         String schemaName = "src/main/resources/xml/candies4.xsd";
         SchemaFactory factory = SchemaFactory.newInstance(language);
         File schemaLocation = new File(schemaName);

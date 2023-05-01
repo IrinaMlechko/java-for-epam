@@ -56,6 +56,7 @@ public class CandyHandler extends DefaultHandler {
                 case INGREDIENT -> current.getIngredients().add(new Candy.IngredientType());
                 case INGREDIENTNAME -> current.getIngredients().get(current.getIngredients().size()-1).setName(data);
                 case AMOUNT -> current.getIngredients().get(current.getIngredients().size()-1).setAmount(Integer.parseInt(data));
+                case UNIT -> current.getIngredients().get(current.getIngredients().size()-1).setUnit(data);
                 case PROTEIN -> current.getValue().setProtein(Integer.parseInt(data));
                 case FAT -> current.getValue().setFat(Integer.parseInt(data));
                 case CARBOHYDRATES -> current.getValue().setCarbohydrates(Integer.parseInt(data));
