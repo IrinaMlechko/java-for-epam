@@ -1,62 +1,58 @@
 package by.mlechka.balls.service.impl;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+import by.mlechka.balls.common.BallColor;
 import by.mlechka.balls.model.Ball;
 import by.mlechka.balls.model.Basket;
 import by.mlechka.balls.service.BallService;
-import by.mlechka.balls.common.BallColor;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BallServiceImplTest {
+
     private BallService ballService;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         ballService = new BallServiceImpl();
     }
 
     @Test
-    void addBall_shouldAddBallToBasket() {
-        Ball ball = new Ball(2.0, BallColor.RED);
+    public void testAddBall() {
         Basket basket = new Basket();
-
+        Ball ball = new Ball(1.0, BallColor.RED);
         ballService.addBall(basket, ball);
-
-        Assertions.assertEquals(1, basket.getBalls().size());
-        Assertions.assertEquals(ball, basket.getBalls().get(0));
+        assertEquals(1, basket.getBalls().length);
+        assertEquals(ball, basket.getBalls()[0]);
     }
 
     @Test
-    void getWeight_shouldReturnTotalWeightOfBallsInBasket() {
-        List<Ball> balls = new ArrayList<>();
-        balls.add(new Ball(2.0, BallColor.RED));
-        balls.add(new Ball(1.0, BallColor.BLUE));
-        Basket basket = new Basket(balls);
-
-        double totalWeight = ballService.getWeight(basket);
-
-        Assertions.assertEquals(3.0, totalWeight);
+    public void testGetWeight() {
+        Basket basket = new Basket();
+        Ball ball1 = new Ball(1.0, BallColor.RED);
+        Ball ball2 = new Ball(2.0, BallColor.GREEN);
+        Ball ball3 = new Ball(3.0, BallColor.BLUE);
+        ballService.addBall(basket, ball1);
+        ballService.addBall(basket, ball2);
+        ballService.addBall(basket, ball3);
+        double expectedWeight = ball1.getWeight() + ball2.getWeight() + ball3.getWeight();
+        assertEquals(expectedWeight, ballService.getWeight(basket), 0.001);
     }
 
     @Test
-    void countBallsByColor_shouldReturnNumberOfBallsInBasketWithSpecifiedColor() {
-        List<Ball> balls = new ArrayList<>();
-        balls.add(new Ball(2.0, BallColor.RED));
-        balls.add(new Ball(1.0, BallColor.BLUE));
-        balls.add(new Ball(0.5, BallColor.RED));
-        Basket basket = new Basket(balls);
-
-        int redBallsCount = ballService.countBallsByColor(basket, BallColor.RED);
-        int blueBallsCount = ballService.countBallsByColor(basket, BallColor.BLUE);
-        int greenBallsCount = ballService.countBallsByColor(basket, BallColor.GREEN);
-
-        Assertions.assertEquals(2, redBallsCount);
-        Assertions.assertEquals(1, blueBallsCount);
-        Assertions.assertEquals(0, greenBallsCount);
+    public void testCountBallsByColor() {
+        Basket basket = new Basket();
+        Ball ball1 = new Ball(1.0, BallColor.RED);
+        Ball ball2 = new Ball(2.0, BallColor.GREEN);
+        Ball ball3 = new Ball(3.0, BallColor.BLUE);
+        ballService.addBall(basket, ball1);
+        ballService.addBall(basket, ball2);
+        ballService.addBall(basket, ball3);
+        assertEquals(1, ballService.countBallsByColor(basket, BallColor.RED));
+        assertEquals(1, ballService.countBallsByColor(basket, BallColor.GREEN));
+        assertEquals(1, ballService.countBallsByColor(basket, BallColor.BLUE));
+        assertEquals(0, ballService.countBallsByColor(basket, BallColor.BLACK));
     }
-
 }

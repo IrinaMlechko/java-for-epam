@@ -64,4 +64,5 @@ public class Ball {
         result = prime * result + ((color == null) ? 0 : color.hashCode());
         return result;
     }
+
 }

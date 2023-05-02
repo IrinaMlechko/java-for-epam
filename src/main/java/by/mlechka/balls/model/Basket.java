@@ -1,24 +1,22 @@
 package by.mlechka.balls.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringJoiner;
 
 public class Basket {
-    List<Ball> balls = new ArrayList<>();
+    Ball[] balls;
 
     public Basket() {
     }
 
-    public Basket(List<Ball> balls) {
+    public Basket(Ball[] balls) {
         this.balls = balls;
     }
 
-    public List<Ball> getBalls() {
+    public Ball[] getBalls() {
         return balls;
     }
 
-    public void setBalls(List<Ball> balls) {
+    public void setBalls(Ball[] balls) {
         this.balls = balls;
     }
 
@@ -31,11 +29,11 @@ public class Basket {
             return false;
         }
         Basket basket = (Basket) o;
-        if (balls.size() != basket.balls.size()) {
+        if (balls.length != basket.balls.length) {
             return false;
         }
-        for (int i = 0; i < balls.size(); i++) {
-            if (!balls.get(i).equals(basket.balls.get(i))) {
+        for (int i = 0; i < balls.length; i++) {
+            if (!balls[i].equals(basket.balls[i])) {
                 return false;
             }
         }
