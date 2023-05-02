@@ -3,32 +3,33 @@ package by.mlechka.array2.model;
 import by.mlechka.array2.observer.ArrayEvent;
 import by.mlechka.array2.observer.Observable;
 import by.mlechka.array2.observer.Observer;
+import by.mlechka.array2.observer.impl.ArrayObserver;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 
 public class DataArray implements Observable {
 
     private UUID id;
     private int[] numbers;
-    private List<Observer> observers;
+    private Observer observer;
 
     public DataArray() {
-        observers = new ArrayList<>();
+        this.id = UUID.randomUUID();
+        observer = new ArrayObserver();
     }
 
     public DataArray(int[] numbers) {
         this.id = UUID.randomUUID();
-        this.numbers = numbers;
-        observers = new ArrayList<>();
+        setNumbers(numbers);
+        //TODO: why? how to do it right?
+        observer = new ArrayObserver();
     }
 
     public DataArray(UUID id, int[] numbers) {
         this.id = id;
         this.numbers = numbers;
-        observers = new ArrayList<>();
+        observer = new ArrayObserver();
     }
 
     public UUID getId() {
@@ -73,20 +74,21 @@ public class DataArray implements Observable {
 
     @Override
     public void attach(Observer observer) {
-        observers.add(observer);
+        this.observer = observer;
     }
 
     @Override
     public void detach(Observer observer) {
-        observers.remove(observer);
+        if (this.observer == observer) {
+            this.observer = new ArrayObserver();
+        }
     }
 
     @Override
     public void notifyObserver() {
         ArrayEvent event = new ArrayEvent(this);
 
-        for (Observer observer : observers) {
-            observer.parameterChanged(event);
-        }
+        if(observer != null){
+        observer.parameterChanged(event);}
     }
 }

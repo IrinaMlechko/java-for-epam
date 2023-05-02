@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 
 public class NumbersArrayServiceImpl implements NumbersArrayService {
 
-    private static final Logger logger = LogManager.getLogger(NumbersArrayServiceImpl.class);
+    static Logger logger = LogManager.getLogger(NumbersArrayServiceImpl.class);
 
     @Override
     public int findMinValue(NumbersArray numbersArray) {

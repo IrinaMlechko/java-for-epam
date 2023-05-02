@@ -1,7 +1,6 @@
 package by.mlechka.array.validator;
 
 import by.mlechka.array.exception.InvalidDataException;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,18 +15,16 @@ import java.util.stream.Stream;
 
 public class FileValidator {
 
-//    private static final Logger logger = LogManager.getLogger(by.mlechka.array2.validator.FileValidator.class);
-
     static Logger logger = LogManager.getLogger();
 
     public static void validateFile(String fileName) throws InvalidDataException, FileNotFoundException {
         Scanner scanner = new Scanner(new File(fileName));
         if (!scanner.hasNextLine()) {
             scanner.close();
-//            throw new InvalidDataException("File is empty.");
-            logger.fatal("File is empty. " + fileName);
-            logger.log(Level.FATAL, "File is empty. " + fileName);
-            throw new RuntimeException("File is empty.");
+            throw new InvalidDataException("File is empty.");
+//            logger.fatal("File is empty. " + fileName);
+//            logger.log(Level.FATAL, "File is empty. " + fileName);
+//            throw new RuntimeException("File is empty.");
         }
         String line = scanner.nextLine();
         if (!line.matches("[0-9\\s]+")) {

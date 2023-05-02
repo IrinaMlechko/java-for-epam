@@ -22,7 +22,9 @@ public class Warehouse {
     }
 
     public ArrayStatistics put(UUID key, ArrayStatistics value) {
-        return mapWithArrayCharacteristics.put(key, value);
+        var test = mapWithArrayCharacteristics.put(key, value);
+        System.out.println(mapWithArrayCharacteristics.get(key));
+        return test;
     }
 
     public ArrayStatistics remove(UUID key) {
@@ -31,5 +33,13 @@ public class Warehouse {
 
     public ArrayStatistics replace(UUID key, ArrayStatistics value) {
         return mapWithArrayCharacteristics.replace(key, value);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Warehouse{");
+        sb.append("mapWithArrayCharacteristics=").append(mapWithArrayCharacteristics);
+        sb.append('}');
+        return sb.toString();
     }
 }

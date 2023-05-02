@@ -12,17 +12,19 @@ import java.util.UUID;
 
 public class ArrayObserver implements Observer {
 
-    private static final DataArrayService dataArrayService = new DataArrayServiceImpl();
+    private static final DataArrayService DATA_ARRAY_SERVICE = new DataArrayServiceImpl();
 
     @Override
     public void parameterChanged (ArrayEvent arrayEvent){
         DataArray array = arrayEvent.getSource();
 
-        Integer min = dataArrayService.findMinValue(array);
-        Integer max = dataArrayService.findMaxValue(array);
-        Integer sum = dataArrayService.calculateSum(array);
-        Double average = dataArrayService.findAverageValue(array);
-        ArrayStatistics statistics = new ArrayStatistics(min, max, sum, average);
+        Integer min = DATA_ARRAY_SERVICE.findMinValue(array);
+        Integer max = DATA_ARRAY_SERVICE.findMaxValue(array);
+        Integer sum = DATA_ARRAY_SERVICE.calculateSum(array);
+        Double average = DATA_ARRAY_SERVICE.findAverageValue(array);
+        Integer amountOfPositiveElements = DATA_ARRAY_SERVICE.countPositiveValues(array);
+        Integer amountOfNegativeElements = DATA_ARRAY_SERVICE.countNegativeValues(array);
+        ArrayStatistics statistics = new ArrayStatistics(min, max, sum, average, amountOfPositiveElements, amountOfNegativeElements);
 
         UUID id = array.getId();
 

@@ -2,6 +2,7 @@ package by.mlechka.array2.repository;
 
 import by.mlechka.array2.model.DataArray;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.StringJoiner;
@@ -10,7 +11,7 @@ public class Repository {
 
     private static Repository instance;
 
-    private List<DataArray> dataArrays;
+    private List<DataArray> dataArrays = new ArrayList<>();
 
     public Repository(){}
 
@@ -20,6 +21,10 @@ public class Repository {
             instance = new Repository();
         }
         return instance;
+    }
+
+    public List<DataArray> getDataArrays() {
+        return dataArrays;
     }
 
     @Override
