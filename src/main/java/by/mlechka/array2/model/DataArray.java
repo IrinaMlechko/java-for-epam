@@ -83,8 +83,10 @@ public class DataArray implements Observable {
 
     @Override
     public void notifyObserver() {
+        ArrayEvent event = new ArrayEvent(this);
+
         for (Observer observer : observers) {
-            observer.parameterChanged(new ArrayEvent(this));
+            observer.parameterChanged(event);
         }
     }
 }

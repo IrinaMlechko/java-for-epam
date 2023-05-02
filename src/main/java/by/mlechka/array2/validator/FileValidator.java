@@ -1,7 +1,7 @@
-package by.mlechka.array.validator;
+package by.mlechka.array2.validator;
 
 import by.mlechka.array.exception.InvalidDataException;
-import org.apache.logging.log4j.Level;
+import by.mlechka.array2.service.impl.DataArrayServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,17 +16,13 @@ import java.util.stream.Stream;
 
 public class FileValidator {
 
-//    private static final Logger logger = LogManager.getLogger(by.mlechka.array2.validator.FileValidator.class);
-
-    static Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(FileValidator.class);
 
     public static void validateFile(String fileName) throws InvalidDataException, FileNotFoundException {
         Scanner scanner = new Scanner(new File(fileName));
         if (!scanner.hasNextLine()) {
             scanner.close();
-//            throw new InvalidDataException("File is empty.");
-            logger.fatal("File is empty. " + fileName);
-            logger.log(Level.FATAL, "File is empty. " + fileName);
+
             throw new RuntimeException("File is empty.");
         }
         String line = scanner.nextLine();
@@ -47,8 +43,7 @@ public class FileValidator {
                 throw new InvalidDataException("Invalid data in file");
             }
         } catch (IOException e) {
-            logger.fatal("File not found: " + fileName);
-//            throw new FileNotFoundException("File not found: " + fileName);
+            logger.error("File not found: " + fileName);
             throw new FileNotFoundException("File not found: " + fileName);
         }
     }
