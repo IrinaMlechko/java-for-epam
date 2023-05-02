@@ -1,0 +1,6 @@
+19:56:17.782 [main] INFO  mlechka.array2.service.impl.DataArrayServiceImpl - Finding minimal value for the array
+19:56:17.790 [main] INFO  mlechka.array2.service.impl.DataArrayServiceImpl - Finding maximal value for the array
+19:56:17.791 [main] INFO  mlechka.array2.service.impl.DataArrayServiceImpl - Calculating sum of elements for the array
+19:56:17.792 [main] INFO  mlechka.array2.service.impl.DataArrayServiceImpl - Finding average value for the array
+19:56:17.798 [main] INFO  mlechka.array2.service.impl.DataArrayServiceImpl - Counting amount of positive elements in the array
+19:56:17.800 [main] INFO  mlechka.array2.service.impl.DataArrayServiceImpl - Counting amount of negative elements in the array
